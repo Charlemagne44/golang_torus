@@ -9,8 +9,8 @@ import (
 // rotate the circle about y (torus) -> ((R2 + R1cos(theta), R1sin(theta), -(R2 + R1cos(theta)sin(phi))))
 
 // screen widths and heights
-const screen_width = 50
-const screen_height = 50
+const screen_width = 75
+const screen_height = 75
 
 // spacing between calculations of the theta angle of rotation
 const theta_spacing = 0.07 // angle of rotation about x that creates circle
@@ -31,17 +31,12 @@ const K2 = 5
 const K1 = screen_width * K2 * 3 / (8 * (R1 + R2))
 
 func main() {
-	var a float64 = 0
+	var a float64 = 90
 	var b float64 = 0
 	for {
 		render_frame(a, b)
 		a += 0.001
-		b += 0.002
-		if a > 2*math.Pi {
-			a = 0.0
-		} else if b > 2*math.Pi {
-			b = 0.0
-		}
+		b += 0.001
 	}
 }
 
@@ -116,7 +111,7 @@ func render_frame(A, B float64) {
 	fmt.Printf("\x1b[H")
 	for j := 0; j < screen_height; j++ {
 		for i := 0; i < screen_width; i++ {
-			fmt.Printf("%s", output[i][j])
+			fmt.Printf("%s%s", output[i][j], output[i][j])
 		}
 		fmt.Println()
 	}
