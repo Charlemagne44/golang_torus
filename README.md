@@ -9,7 +9,7 @@ Golang torus is released as a binary for all platforms under the releases tab. D
 ### Linux Example
 
 ```bash
-wget https://github.com/Charlemagne44/golang_torus/releases/download/1.0/donut_linux_amd64```
+wget https://github.com/Charlemagne44/golang_torus/releases/download/1.0/donut_linux_amd64
 
 # optional rename to just "donut" -> make sure destination dir is in your PATH
 sudo mv donut_linux_amd64 /usr/bin/donut
